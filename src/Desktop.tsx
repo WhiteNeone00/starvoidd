@@ -54,7 +54,7 @@ export default function Desktop() {
             {showWelcome ? (<div ref={refs.setFloating} style={floatingStyles}><WelcomePopup hide={() => {setShowWelcome(false)}}/></div>) : null}
             {/* @ts-ignore */}
             <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={!isAppFullscreen.value}>
-              <p class='absolute bottom-12 md:bottom-24 right-0 text-xs pr-2 pb-2 md:pb-0 md:pr-10 md:text-sm text-end text-white opacity-20'>© {new Date().getFullYear()} <a href='https://github.com/shadowdevfr' class='hover:opacity-50 transition' target='_blank'> Maxim Lucas</a> {pepsimode.value ? ' - 🐈 Pepsi Mode' : ''}</p>
+              <p class='absolute bottom-12 md:bottom-24 right-0 text-xs pr-2 pb-2 md:pb-0 md:pr-10 md:text-sm text-end text-white opacity-20'>© {new Date().getFullYear()} <a href='https://github.com/shadowdevfr' class='hover:opacity-50 transition' target='_blank'> starvoid</a> {pepsimode.value ? ' - 🐈 Borjú' : ''}</p>
             </Animated>
             <div ref={refs.setReference} class='fixed bottom-0 w-screen'>
               <Suspense fallback={<></>}><Taskbar/></Suspense>
