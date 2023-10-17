@@ -12,35 +12,6 @@ const AboutMe = lazy(() => import("./AboutMe/AboutMe"));
 
 const apps: App[] = [
     {
-        name: t('app.aboutme'),
-        window: {
-            width: 600,
-            height: 500,
-            resizable: false,
-            maximizable: true,
-            minimizable: false,
-            fullscreenable: false,
-            transparentTitleBar:true,
-            title: t('app.aboutme')
-        },
-        icon: '/apps/welcome.png',
-        component: () => <Suspense fallback={<></>}><AboutMe/></Suspense>
-    },
-    {
-        name: t('app.projects'),
-        window: {
-            width: 900,
-            height: 600,
-            resizable: true,
-            maximizable: true,
-            minimizable: true,
-            fullscreenable: true,
-            title: t('app.projects')
-        },
-        icon: '/apps/portfolio.png',
-        component: () => <Suspense fallback={<></>}><MyProjects/></Suspense>
-    },
-    {
         name: t('app.skills'),
         window: {
             width: 700,
@@ -69,21 +40,7 @@ const apps: App[] = [
         component: () => <Suspense fallback={<></>}><Terminal /></Suspense>
     },
     {
-        name: 'Github',
-        window: {
-            width: 600,
-            height: 500,
-            resizable: true,
-            maximizable: true,
-            minimizable: true,
-            fullscreenable: true,
-            title: t('app.github.title')
-        },
-        icon: '/apps/github.png',
-        component: () => <Suspense fallback={<></>}><GithubWindow /></Suspense>
-    },
-    {
-        name: 'Pepsi',
+        name: 'Borjú',
         window: {
             width: 600,
             height: 500,
@@ -95,20 +52,6 @@ const apps: App[] = [
         },
         icon: '/apps/pepsifolder.png',
         component: () => <Suspense fallback={<></>}><Pepsi/></Suspense>
-    },
-    {
-        name: 'Visual Studio Code',
-        window: {
-            width: 1000,
-            height: 800,
-            resizable: true,
-            maximizable: true,
-            minimizable: true,
-            fullscreenable: true,
-            title: 'Visual Studio Code'
-        },
-        icon: '/apps/vscode.svg',
-        component: () => <Suspense fallback={<></>}><Vscode/></Suspense>
     },
 
 
