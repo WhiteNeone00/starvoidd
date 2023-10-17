@@ -10,17 +10,15 @@ export const commands = [
         Response: (props:{scroll:() => {}}) => {
             useEffect(() => {props.scroll()}, []);
             return <h1>
-                <p className='gradient-text'>========= List of commands =========</p>
-                <p>• help <span className='text-gray-400'>- Get a list of commands</span></p>
-                <p>• pepsi <span className='text-gray-400'>- Get a random pepsi image</span></p>
-                <p>• neofetch <span className='text-gray-400'>- Get my main PC specs</span></p>
-                <p>• baguette <span className='text-gray-400'>- baget</span></p>
-                <p>• thisyou <span className='text-gray-400'>- Remind you of something?</span></p>
+                <p className='gradient-text'>========= Parancs Lista =========</p>
+                <p>• help <span className='text-gray-400'>- Segítség parancs</span></p>
+                <p>• borjukepu <span className='text-gray-400'>- Borjúképűről egy kép</span></p>
+                <p>• neofetch <span className='text-gray-400'>- Specifikáció a Gépemnek</span></p>
             </h1>
         }
     },
     {
-        name: 'pepsi',
+        name: 'borjukepu',
         Response: (props:{scroll:() => {}}) => {
             const [pic, setPic] = useState('');
             useEffect(() => {
@@ -31,7 +29,7 @@ export const commands = [
                 }) 
             }, []);
             if (pic === '') return <p className="animate-pulse">Loading...</p>
-            return <><img src={pic} alt="pepsi" onLoad={() => props.scroll()}/><p>🐈 Pepsi Mode {pepsimode.value ? 'enabled' : 'disabled'}. Meow!</p></>
+            return <><img src={pic} alt="borjukepu" onLoad={() => props.scroll()}/><p>🐈 Csabi Borjú mód {pepsimode.value ? 'bekapcsolva' : 'kikapcsolva'}. Borjú szereti a faszt!</p></>
         }
     }, 
     {
@@ -50,7 +48,7 @@ export const commands = [
                 const minutes = Math.floor(delta / 60) % 60;
                 delta -= minutes * 60;
                 const seconds = Math.floor(delta % 60);
-                setUptime(`${years} years, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`);
+                setUptime(`${days} nap, ${hours} óra, ${minutes} perc, ${seconds} másodperc`);
                 props.scroll();
             }, []);
             return <div className="flex flex-row gap-2">
@@ -67,13 +65,13 @@ export const commands = [
                 ⠀⠀⠀⠀'"'⠀⠀⠀'"'<br/>
                 </p>
                 <p className="text-gray-300 w-1/2">
-                    <span className="gradient-text">OS:</span> PepsiOS 1.0.0 x64<br/>
-                    <span className="gradient-text">Host:</span> xshadow<br/>
+                    <span className="gradient-text">OS:</span> BorjuOS 1.0.0 x64<br/>
+                    <span className="gradient-text">Hoszt:</span> client.undernetwork.hu<br/>
                     <span className="gradient-text">Uptime:</span> {uptime}<br/>
-                    <span className="gradient-text">Resolution:</span> {window.innerWidth}x{window.innerHeight}<br/>
-                    <span className="gradient-text">CPU: </span> AMD Ryzen 7 7700 (16) @ 5.3GHz<br/>
-                    <span className="gradient-text">GPU:</span> AMD Radeon RX 5700 XT<br/>
-                    <span className="gradient-text">Memory:</span> 31864MB DDR5<br/>
+                    <span className="gradient-text">Képernyő:</span> {window.innerWidth}x{window.innerHeight}<br/>
+                    <span className="gradient-text">CPU: </span> AMD A4-5300 (1-core)<br/>
+                    <span className="gradient-text">GPU:</span> AMD Radeon HD 7480D<br/>
+                    <span className="gradient-text">Memória:</span> 12GB DDR3<br/>
                 </p>
             </div>
         }
@@ -81,7 +79,7 @@ export const commands = [
     {
         name: 'ls',
         Response: () => {
-            return <p><span className="gradient-text font-bold">apps pepsi-pics sideprojects</span> Portfolio.tsx</p>
+            return <p><span className="gradient-text font-bold">undernetwork borjukepu csabifeetpics</span> szia.php te.yml</p>
         }
     },
     {
@@ -91,7 +89,7 @@ export const commands = [
         }
     },
     {
-        name: 'thisyou',
+        name: 'eztevagy',
         Response: (props:{scroll:() => {}}) => {
             interface Ip {city: string, region: string, country_name: string, ip: string}
             const [ip, setIp] = useState<Ip>({city:'unknown', region:'unknown', country_name:'unknown', ip:'unknown'});
@@ -101,25 +99,8 @@ export const commands = [
                     props.scroll();
                 })
             }, []);
-            if (!ip.city) return <p className="animate-pulse">Loading...</p>
-            return <p>hey yo {ip.city} ({ip.region}), {ip.country_name} {ip.ip} remind u of something?</p>
-        }
-    },
-    {
-        name: 'about',
-        Response: (props:{scroll:() => {}}) => {
-            useEffect(() => {
-                openApp(apps.find((x) => x.name === 'os_about')!);
-                props.scroll();
-            }, []);
-            return <></>
-        }
-    },
-    {
-        name: 'sudo',
-        Response: (props:{scroll:() => {}}) => {
-            useEffect(() => {props.scroll()}, []);
-            return <p>dont you dare</p>
+            if (!ip.city) return <p className="animate-pulse">Betöltés...</p>
+            return <p>{ip.city} ({ip.region}), {ip.country_name} {ip.ip} emlékeztet valamire?</p>
         }
     },
 ]
