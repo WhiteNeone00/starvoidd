@@ -10,7 +10,7 @@ export default function BootScreen(props:{status:number}) {
           </div>
           <p class='text-white/50 font-thin animate-pulse'>{props.status === 2 ? t('boot.2') : t('boot.1')}</p>
         </div>
-        <p class='text-md text-center w-full text-gray-500 mb-5'>Copyright © {new Date().getFullYear()} <a href='https://github.com/shadowdevfr' target='_blank'>Maxim Lucas</a> {t('copyright')}</p>
+        <p class='text-md text-center w-full text-gray-500 mb-5'>Copyright © {new Date().getFullYear()} <a target='_blank'>starvoid</a> {t('copyright')}</p>
     </div>
   )
 }
