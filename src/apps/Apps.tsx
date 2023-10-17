@@ -1,14 +1,10 @@
 import { lazy, Suspense } from "preact/compat";
 import t from "../i18n/i18n";
-const Vscode = lazy(() => import("./vscode/Vscode"));
 const MyProjects = lazy(() => import("./MyProjects/MyProjects"));
-const AboutWebsite = lazy(() => import("./AboutWebsite/About"));
 const Customize = lazy(() => import("./Customize/Customize"));
-const GithubWindow = lazy(() => import("./Github/GithubWindow"));
 const Pepsi = lazy(() => import("./PepsiTheCat/Pepsi"));
 const SkillsMain = lazy(() => import("./Skills/SkillsMain"));
 const Terminal = lazy(() => import("./Terminal/Terminal"));
-const AboutMe = lazy(() => import("./AboutMe/AboutMe"));
 
 const apps: App[] = [
     {
@@ -48,7 +44,7 @@ const apps: App[] = [
             maximizable: true,
             minimizable: true,
             fullscreenable: true,
-            title: 'Pepsi - Gallery'
+            title: 'Borjú Galléria'
         },
         icon: '/apps/pepsifolder.png',
         component: () => <Suspense fallback={<></>}><Pepsi/></Suspense>
@@ -70,22 +66,6 @@ const apps: App[] = [
         hide: true,
         icon: '/context/customize.png',
         component: () => <Suspense fallback={<></>}><Customize /></Suspense>
-    },
-    {
-        name: 'os_about',
-        window: {
-            width: 200,
-            height: 500,
-            resizable: false,
-            maximizable: false,
-            minimizable: false,
-            fullscreenable: true,
-            transparentTitleBar: true,
-            title: t('app.os.about.title')
-        },
-        hide: true,
-        icon: '/context/about.png',
-        component: () => <Suspense fallback={<></>}><AboutWebsite /></Suspense>
     }
 ]
 
