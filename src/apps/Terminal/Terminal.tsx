@@ -16,7 +16,7 @@ export default function Terminal() {
       <div className="bg-zinc-800 w-full h-full md:h-96 rounded-b-md">
           <div className='flex flex-col justify-end'>
             <div className='font-mono w-full h-full md:h-96 p-3 text-white overflow-y-scroll noscrollbar' style={{height: window.innerWidth < 768 ? window.innerHeight-100 : 385}} id={termId}>
-              <p className='text-gray-400 mb-5'><span class='gradient-text'>Üdv a BorjuOS-ben! (x64)</span><br/><br/>
+              <p className='text-gray-400 mb-5'><span class='gradient-text'>Üdv a BorjuOS-ben! (x64)</span><br/><br/><p>
               <p className='text-gray-500 text-xs'>(i) Segítséghez írd be a "help" parancsot.</p>
               {history.map((value) => {
                 const Component = value;
