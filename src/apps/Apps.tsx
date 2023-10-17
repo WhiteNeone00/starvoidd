@@ -22,6 +22,20 @@ const apps: App[] = [
         component: () => <Suspense fallback={<></>}><SkillsMain /></Suspense>
     },
     {
+        name: t('app.projects'),
+        window: {
+            width: 900,
+            height: 600,
+            resizable: true,
+            maximizable: true,
+            minimizable: true,
+            fullscreenable: true,
+            title: t('app.projects')
+        },
+        icon: '/apps/portfolio.png',
+        component: () => <Suspense fallback={<></>}><MyProjects/></Suspense>
+    },
+    {
         name: t('app.terminal'),
         window: {
             width: 600,
