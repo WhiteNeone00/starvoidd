@@ -1,5 +1,4 @@
 import { useState, useEffect } from "preact/hooks";
-import apps from "../Apps";
 import { pepsimode } from "../../Signals";
 
 
