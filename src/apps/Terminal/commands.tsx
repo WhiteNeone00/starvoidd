@@ -1,5 +1,4 @@
 import { useState, useEffect } from "preact/hooks";
-import { openApp } from "../../lib/AppsWindowsManager";
 import apps from "../Apps";
 import { pepsimode } from "../../Signals";
 
@@ -80,12 +79,6 @@ export const commands = [
         name: 'ls',
         Response: () => {
             return <p><span className="gradient-text font-bold">undernetwork borjukepu csabifeetpics</span> szia.php te.yml</p>
-        }
-    },
-    {
-        name: 'baguette',
-        Response: (props:{scroll:() => {}}) => {
-            return <img src="https://pngimg.com/uploads/baguette/baguette_PNG15.png" alt="baguette" onLoad={() => props.scroll()}/>
         }
     },
     {
